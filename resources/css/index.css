@@ -1,0 +1,70 @@
+/* DESIGN SYSTEM
+  - Global rules, including custom variables
+
+*/
+
+:root {
+  --violet: #755CDE;
+  --yellow: #F6A560;
+  --pink: #F39E9E;
+  --salmon: #EB7565;
+  --cyan: #61C4B7;
+  --maroon: #552049;
+  --almost-black: #030303;
+  --gray: #7A746E;
+  --almost-white: #FFF7F0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--almost-black);
+}
+h1 {
+  font-size: 3.5rem;
+  line-height: 4.38rem;
+}
+h2 {
+  font-size: 2.5rem;
+  line-height: 3.19rem;
+}
+h3 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+p {
+  font-size: 1.13rem;
+  line-height: 1.75rem;
+  color: var(--gray);
+}
+button {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.75rem;
+  color: var(--almost-white);
+  padding-block: 0.88rem;
+  padding-inline: 2.81rem;
+  border-radius: 1.75rem;
+  width: 14.25rem;
+}
+.btn-primary {
+  background-color: var(--almost-black);
+}
+.btn-primary:hover {
+  background-color: var(--violet);
+}
+.btn-secondary {
+  background-color: var(--salmon);
+}
+.btn-secondary:hover {
+  background-color: var(--yellow);
+}
+.slide-control {
+  width: unset;
+  padding: 1.5rem;
+  border-radius: 50%;
+}
+.slide-control > img {
+  width: 1rem;
+  height: 1rem;
+}

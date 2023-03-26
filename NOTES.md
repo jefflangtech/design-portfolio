@@ -4,18 +4,18 @@ A useful practice I've found is to be deliberate and methodical when it comes to
 
 ## Table of contents
 
-- [Overview](#overview)
+- [First Steps](#first-steps)
   - [Initial Setup](#initial-setup)
   - [Design System](#design-system)
-- [My process](#my-process)
-  - [Built with](#built-with)
+- [Building](#building)
+  - [HTML](#html)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-## Overview
+## First Steps
 
 ### Initial Setup
 
@@ -64,25 +64,15 @@ It could also include:
 - hover states
 - visibility or display states
 
-### Links
+I like using rems, at least right now, and something that I'll check out is how all the various font sizes relate, along with line-heights, so that I can select a base font size that's easiest to work with in rem terms.
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+Finally, once the design system is in place, I'll test out the various elements in the browser.
 
-## My process
+## Building
 
-### Built with
+### HTML
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
