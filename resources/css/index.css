@@ -82,7 +82,10 @@ button {
 /* Primary structure & content */
 body {
   background-color: var(--almost-white);
-  overflow: hidden;
+  overflow-x: hidden;
+}
+.page-container {
+  max-width: 
 }
 header {
   margin-bottom: 5rem;
@@ -113,19 +116,53 @@ main div:first-child {
   grid-column: span 2;
   grid-row: span 2;
 }
-main div:nth-last-child(-n+3) {
+main div:nth-child(n+4) {
   grid-column: span 2;
+}
+main div:nth-last-child(-n+2) {
+  grid-column: span 3;
 }
 main div:nth-child(5) {
   grid-column: 5 / span 2;
   grid-row: 1;
 }
-/* For testing the grid layout */
-.box {
-  border: 1px solid red;
-  background-color: #61C4B7;
+main div:nth-child(1) {
+  background-color: var(--violet);
+}
+main div:nth-child(2) {
+  background-color: var(--yellow);
+}
+main div:nth-child(3) {
+  background-color: var(--pink);
+}
+main div:nth-child(4) {
+  background-color: var(--salmon);
+}
+main div:nth-child(5) {
+  background-color: var(--cyan);
+}
+main div:nth-child(6) {
+  background-color: var(--maroon);
+}
+.card {
+  border-radius: 0.5rem;
   width: 100%;
-  height: 100px;
+  min-height: 9.88rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card img {
+  width: 50%;
+  max-width: 9.5rem;
+  padding-top: 1.5rem;
+  padding-right: 1.5rem;
+  align-self: flex-end;
+}
+.card p {
+  padding-left: 1.5rem;
+  padding-bottom: 1.5rem;
+  color: var(--almost-white);
 }
 
 /* Media queries */
@@ -153,6 +190,9 @@ main div:nth-child(5) {
   main div:nth-child(5) {
     grid-column: span 2;
     grid-row: unset;
+  }
+  main div:nth-last-child(-n+2) {
+    grid-column: span 2;
   }
 }
 @media (max-width: 575px) {
