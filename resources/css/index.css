@@ -1,6 +1,9 @@
 /* DESIGN SYSTEM
   - Global rules, including custom variables
+  - Utility classes
+  - Primary structure & content
 
+  - Media queries
 */
 
 :root {
@@ -23,6 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3.5rem;
   line-height: 4.38rem;
+  margin-bottom: 1.44rem;
 }
 h2 {
   font-size: 2.5rem;
@@ -43,7 +47,6 @@ button {
   line-height: 1.75rem;
   color: var(--almost-white);
   padding-block: 0.88rem;
-  padding-inline: 2.81rem;
   border-radius: 1.75rem;
   width: 14.25rem;
 }
@@ -67,4 +70,103 @@ button {
 .slide-control > img {
   width: 1rem;
   height: 1rem;
+}
+/* Utility classes */
+.inline-padding {
+  padding-inline: 10.31rem;
+}
+.flex {
+  display: flex;
+}
+
+/* Primary structure & content */
+body {
+  background-color: var(--almost-white);
+}
+header {
+  margin-bottom: 5rem;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2.13rem;
+  margin-bottom: 4.13rem;
+}
+#logo {
+  width: 4rem;
+}
+.hero {
+  text-align: center;
+  padding-inline: 22%;
+}
+.hero > p {
+  padding-inline: 2rem;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .inline-padding {
+    padding-inline: 5%;
+  }
+  header {
+    margin-bottom: 4rem;
+  }
+  nav {
+    margin-bottom: 4rem;
+  }
+  .hero {
+    padding-inline: 6.1rem;
+  }
+  h1 {
+    font-size: 2.75rem;
+    line-height: 3.47rem;
+    margin-bottom: 1.63rem;
+  }
+}
+@media (max-width: 575px) {
+  button {
+    font-size: 0.88rem;
+    padding-block: 0.5rem;
+    padding-inline: 1.5rem;
+    border-radius: 1.38rem;
+    width: 11rem;
+  }
+  .inline-padding {
+    padding-inline: 4.5%;
+  }
+  header {
+    margin-bottom: 3rem;
+  }
+  nav {
+    padding-top: 1.63rem;
+    margin-bottom: 2rem;
+  }
+  #logo {
+    width: 3rem;
+  }
+  .hero {
+    padding-inline: 2.5rem;
+  }
+  h1 {
+    font-size: 2.25rem;
+    line-height: 2.84rem;
+    margin-bottom: 1rem;
+  }
+  .hero > p {
+    font-size: 1rem;
+    line-height: 1.63rem;
+    padding-inline: 0.25rem;
+  }
+}
+@media (max-width: 375px) {
+  .inline-padding {
+    padding-inline: 1rem;
+  }
+  header {
+    margin-bottom: 2rem;
+  }
+  nav {
+    padding-top: 1.13rem;
+  }
 }
