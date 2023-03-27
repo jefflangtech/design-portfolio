@@ -72,13 +72,13 @@ Finally, once the design system is in place, I'll test out the various elements 
 
 ### HTML
 
+I focused on identifying in advance the natural sections and breaks in the page. I wanted to build-in semantic structure and accessibility from the beginning.
 
+### CSS
 
-### What I learned
+I decided to use a grid layout for most of the main section. For desktop I'll set up a 6 column grid that shrinks to 4 column for tablet, and 2 column for mobile. Ideally I can set this up so I won't have to do anything more than make minor adjustments to the grid children--hoping they can flow naturally when the grid shrinks at breakpoints.
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
+That's my primary goal at least.
 
 ```html
 <h1>Some HTML code I'm proud of</h1>
@@ -93,10 +93,6 @@ const proudOfThisFunc = () => {
   console.log('🎉')
 }
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
