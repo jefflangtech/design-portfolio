@@ -80,19 +80,51 @@ I decided to use a grid layout for most of the main section. For desktop I'll se
 
 That's my primary goal at least.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+Update: I would call it a success! I'm now feeling disappointed I haven't tried to implement grid more often. Here's my 6-column setup:
+
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 5.5rem;
+}
+.grid-container div:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.grid-container div:nth-child(n+4) {
+  grid-column: span 2;
+}
+.grid-container div:nth-last-child(-n+2) {
+  grid-column: span 3;
+  margin-top: 7rem;
+}
+.grid-container div:nth-child(5) {
+  grid-column: 5 / span 2;
+  grid-row: 1;
+}
+.grid-container div:nth-child(1) {
+  background-color: var(--violet);
+}
+.grid-container div:nth-child(2) {
+  background-color: var(--yellow);
+}
+.grid-container div:nth-child(3) {
+  background-color: var(--pink);
+}
+.grid-container div:nth-child(4) {
+  background-color: var(--salmon);
+}
+.grid-container div:nth-child(5) {
+  background-color: var(--cyan);
+}
+.grid-container div:nth-child(6) {
+  background-color: var(--maroon);
 }
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
+
+I thought about feeding the colors in via JS, stored in an array, but realized that would probably make things *less* clear so I opted for the more verbose selecting of each child.
 
 ### Continued development
 
