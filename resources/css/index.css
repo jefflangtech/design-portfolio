@@ -69,6 +69,7 @@ button {
   width: unset;
   padding: 1.5rem;
   border-radius: 50%;
+  margin-inline: 0.5rem;
 }
 .slide-control > img {
   width: 1rem;
@@ -182,10 +183,52 @@ nav {
   margin-bottom: 2rem;
 }
 .carousel {
-  width: 100%;
+  width: calc(34.95rem * 5);
   height: 22.5rem;
   overflow: hidden;
-  background-color: var(--cyan);
+  position: relative;
+  left: 50%;
+  transform: translateX(-49.5%);
+  margin-bottom: 3.5rem;
+}
+.carousel-inner {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.carousel-image {
+  height: 22.5rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin-inline: 0.9rem;
+}
+.carousel div:nth-child(1) {
+  background-image: url('../images/image-slide-1.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.carousel div:nth-child(2) {
+  background-image: url('../images/image-slide-2.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.carousel div:nth-child(3) {
+  background-image: url('../images/image-slide-3.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.carousel div:nth-child(4) {
+  background-image: url('../images/image-slide-4.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.carousel div:nth-child(5) {
+  background-image: url('../images/image-slide-5.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.carousel-buttons {
+  text-align: center;
 }
 
 /* Media queries */
