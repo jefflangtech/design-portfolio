@@ -184,6 +184,7 @@ nav {
 }
 .carousel {
   width: calc(34.95rem * 5);
+  /* width: 80%; */
   height: 22.5rem;
   overflow: hidden;
   position: relative;
@@ -195,37 +196,16 @@ nav {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  position: relative;
 }
 .carousel-image {
   height: 22.5rem;
+  height: 10rem;
   border-radius: 0.5rem;
-  display: inline-block;
-  margin-inline: 0.9rem;
-}
-.carousel div:nth-child(1) {
-  background-image: url('../images/image-slide-1.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.carousel div:nth-child(2) {
-  background-image: url('../images/image-slide-2.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.carousel div:nth-child(3) {
-  background-image: url('../images/image-slide-3.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.carousel div:nth-child(4) {
-  background-image: url('../images/image-slide-4.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.carousel div:nth-child(5) {
-  background-image: url('../images/image-slide-5.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
+  padding-inline: 0.9rem;
+  position: relative;
+  grid-row: 1;
+  transition: transform 1s ease-in-out;
 }
 .carousel-buttons {
   text-align: center;
