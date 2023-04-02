@@ -18,7 +18,7 @@
   --almost-white: #FFF7F0;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 16px;
-  --transition-delay: 1s;
+  --transition-delay: 0.7s;
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
