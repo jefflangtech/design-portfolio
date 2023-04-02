@@ -2,7 +2,8 @@
   - Global rules, including custom variables
   - Utility classes
   - Primary structure & content
-
+  - - Services Grid
+  - - Carousel Grid
   - Media queries
 */
 
@@ -45,6 +46,11 @@ p {
   line-height: 1.75rem;
   color: var(--gray);
 }
+.p-bold {
+  font-size: 1.5rem;
+  line-height: 1.89rem;
+  font-weight: 700;
+}
 button {
   font-weight: 700;
   font-size: 1rem;
@@ -76,14 +82,10 @@ button {
   width: 1rem;
   height: 1rem;
 }
-/* Utility classes */
 .inline-padding {
-  padding-inline: 2.44rem;
+  /* padding-inline: 2.44rem; */
   max-width: 1110px;
   margin-inline: auto;
-}
-.flex {
-  display: flex;
 }
 
 /* Primary structure & content */
@@ -94,11 +96,13 @@ html, body {
 header {
   margin-bottom: 5rem;
 }
+header > nav {
+  padding-top: 2.13rem;
+}
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 2.13rem;
   margin-bottom: 4.13rem;
 }
 #logo {
@@ -110,13 +114,14 @@ nav {
   margin-inline: auto;
 }
 .hero p {
-  max-width: min(45rem, 80vw);
+  max-width: min(44rem, 78vw);
   margin-inline: auto;
 }
 main {
   margin-bottom: 5.5rem;
   position: relative;
 }
+/* Service Grid */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -159,7 +164,7 @@ main {
 .card {
   border-radius: 0.5rem;
   width: 100%;
-  min-height: 9.88rem;
+  min-height: 11.375rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -172,7 +177,7 @@ main {
   padding-right: 1.5rem;
   align-self: end;
 }
-.card p {
+.p-bold {
   padding-left: 1.5rem;
   padding-bottom: 1.5rem;
   color: var(--almost-white);
@@ -193,8 +198,10 @@ main {
   padding: 0;
   margin-bottom: 2rem;
 }
+/* Carousel Grid */
 .carousel {
-  /* Extremely large width to ensure no squeezing of carousel */
+  /* Extremely large width to ensure no squeezing of carousel
+  and perhaps accommodate more future content */
   width: 250rem;
   height: 360px;
   overflow: hidden;
@@ -238,7 +245,16 @@ main {
 }
 
 /* Media queries */
+@media (max-width: 1190px) {
+  .inline-padding {
+    margin-inline: 2.44rem;
+  }
+}
 @media (max-width: 955px) {
+  .p-bold {
+    padding-left: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
   .footer-flex {
     padding-left: 2rem;
     padding-right: 3rem;
@@ -246,6 +262,15 @@ main {
   }
 }
 @media (max-width: 840px) {
+  .inline-padding {
+    margin-inline: unset;
+    padding-inline: 2.44rem;
+  }
+  .p-bold {
+    font-size: 1.25rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+  }
   #headshot {
     transform: translateX(min(0px, calc(50vw - 4.88rem - 22.75rem)));
   }
@@ -267,6 +292,11 @@ main {
   }
   nav {
     margin-bottom: 4rem;
+  }
+  .p-bold {
+    font-size: 1.5rem;
+    padding-left: 1.25rem;
+    padding-bottom: 1.25rem;
   }
   main {
     margin-bottom: 7.5rem;
@@ -304,10 +334,10 @@ main {
 @media (max-width: 640px) {
   .grid-container div:nth-last-child(-n+2) {
     grid-column: span 4;
-    margin-top: 6.25rem;
+    margin-top: 4.75rem;
   }
   .grid-container div:last-child {
-    margin-top: 2.5rem;
+    margin-top: 1rem;
   }
   #headshot {
     margin-inline: auto;
@@ -346,7 +376,7 @@ main {
   header {
     margin-bottom: 3rem;
   }
-  nav {
+  header > nav {
     padding-top: 1.63rem;
     margin-bottom: 2rem;
   }
@@ -361,10 +391,18 @@ main {
     line-height: 2.84rem;
     margin-bottom: 1rem;
   }
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.89rem;
+    margin-bottom: 2rem;
+  }
   .hero > p {
     font-size: 1rem;
     line-height: 1.63rem;
     padding-inline: 0.25rem;
+  }
+  main {
+    margin-bottom: 6.25rem;
   }
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
@@ -375,9 +413,18 @@ main {
   .footer-flex {
     padding-block: 3rem;
     padding-inline: 8.1vw;
+    margin-bottom: 2.5rem;
   }
 }
 @media (max-width: 500px) {
+  h2 {
+    font-size: 1.63rem;
+    line-height: 2.05rem;
+  }
+  p {
+    font-size: 1rem;
+    line-height: 1.63rem;
+  }
   .carousel {
     height: 180px;
   }
@@ -394,6 +441,15 @@ main {
   }
   nav {
     padding-top: 1.13rem;
+  }
+  .hero {
+    padding-inline: unset;
+  }
+  .hero > p {
+    padding-inline: 0.5rem;
+  }
+  .grid-container div:first-child {
+    min-height: 22.75rem;
   }
   .footer-flex {
     padding-inline: 6.4vw;

@@ -11,9 +11,7 @@ A useful practice I've found is to be deliberate and methodical when it comes to
   - [HTML](#html)
   - [CSS](#css)
   - [JS](#js)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- [Notes](#notes)
 
 ## First Steps
 
@@ -157,23 +155,19 @@ items.forEach(item => {
 
 I would like to build something more dynamic to adapt to any number of items in the grid but I don't know yet whether I'll do that for this project.
 
-### Useful resources
+Something new I learned this time around was how to use an anonymous function callback on an event listener to encapsulate another function where I can pass parameters, like so:
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+```js
+leftBtn.addEventListener('click', () =>{
+  carouselShift(left);
+});
+```
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+This enabled me to create one carouselShift function whether the left or right button was clicked. 
 
-## Author
+And the other thing I learned was to use a flag variable to ignore an event for a time period. I needed the buttons to be unresponsive while the slide action was still happening, and removing the event listener doesn't work when you have an anonymous callback function (it does work if you have a named callback). It's probably better practice to use a flag vs removing/adding event listeners all the time. So now the flag is set to true when the slide is activated, for the transition duration set in CSS, and then is set to false after the transition, allowing the button event to trigger again.
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+## Notes
+I still could have been better with my CSS organization, and right at the end realized I had a behavior I didn't want because I used padding instead of margin. Switching to margin worked for most of the site right off the bat but then impacted another section after some break points. I didn't feel like taking the time to fix the whole thing and just implemented a janky fix where it switches from margin to padding at that break point, but it's on a class named ".inline-padding" so that's annoying.
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+The lesson still stands and I hope to do better next time.

@@ -15,6 +15,7 @@
 .DS_Store
 .prettierignore
 /node_modules
+/single-page-design-portfolio-figma
 package-lock.json
 package.json
 app.js
