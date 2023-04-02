@@ -143,8 +143,9 @@ Some essentials of the JS
 ```js
 // items is an array of the grid children
 items.forEach(item => {
-    item.style.transform = `translateX(-${imgWidth}px)`;
+    item.style.transform = `translateX(${direction * imgWidth}px)`;
   });
+  // This is for a left slide, the right slide would do the opposite
   let firstItem = items.shift();
   items.push(firstItem);
 

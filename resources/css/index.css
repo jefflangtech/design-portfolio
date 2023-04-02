@@ -79,13 +79,16 @@ button {
 /* Utility classes */
 .inline-padding {
   padding-inline: 10.31rem;
+  padding-inline: 2.44rem;
+  max-width: 1110px;
+  margin-inline: auto;
 }
 .flex {
   display: flex;
 }
 
 /* Primary structure & content */
-body {
+html, body {
   background-color: var(--almost-white);
   overflow-x: hidden;
 }
@@ -111,6 +114,7 @@ nav {
 }
 main {
   margin-bottom: 5.5rem;
+  position: relative;
 }
 .grid-container {
   display: grid;
@@ -187,24 +191,23 @@ main {
   margin-bottom: 2rem;
 }
 .carousel {
-  width: calc(34.95rem * 5);
-  /* width: 80%; */
+  /* Extremely large width to ensure no squeezing of carousel */
+  width: 250rem;
   height: 22.5rem;
   overflow: hidden;
   position: relative;
   left: 50%;
-  transform: translateX(-49.5%);
+  transform: translateX(-50%);
+  display: flex;
   margin-bottom: 3.5rem;
 }
 .carousel-inner {
-  width: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, fit-content(540px));
   position: relative;
+  margin-inline: auto;
 }
 .carousel-image {
-  height: 22.5rem;
-  height: 10rem;
   padding-inline: 0.9rem;
   position: relative;
   grid-row: 1;
