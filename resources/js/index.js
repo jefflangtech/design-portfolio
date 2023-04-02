@@ -1,4 +1,5 @@
 // Get the elements necessary to run the carousel
+const carousel = document.getElementById('carousel');
 const carouselItems = document.getElementsByClassName('carousel-image');
 const leftBtn = document.getElementById('left-carousel-button');
 const rightBtn = document.getElementById('right-carousel-button');
@@ -10,6 +11,8 @@ const transitionTiming = rootStyle.getPropertyValue('--transition-delay').slice(
 const left = -1;
 const right = 1;
 let isMoving = false;
+
+console.dir(carousel);
 
 // Load the carousel items into an array
 const items = [];
@@ -62,7 +65,36 @@ const carouselShift = function(direction) {
   }
 
   gridItemShift();
+}
 
+// Slow down the carousel movement from the scroll wheel
+function debounce(func, wait) {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
+}
+
+// Move the carousel after 15 ms delay
+const debounceWheel = debounce((event) => {
+  if(event.deltaY < 0) {
+    carouselShift(left);
+  } else {
+    carouselShift(right);
+  }
+}, 15);
+
+// Move the carousel with the left and right keyboard arrows
+function moveCarouselOnKeyPress(event) {
+  // Check if the left arrow key was pressed
+  if (event.keyCode === 37) {
+    carouselShift(left);
+  }
+  // Check if the right arrow key was pressed
+  else if (event.keyCode === 39) {
+    carouselShift(right);
+  }
 }
 
 leftBtn.addEventListener('click', () =>{
@@ -71,3 +103,8 @@ leftBtn.addEventListener('click', () =>{
 rightBtn.addEventListener('click', () =>{
   carouselShift(right);
 });
+carousel.addEventListener('wheel', (event) => {
+  event.preventDefault();
+  debounceWheel(event);
+});
+document.addEventListener('keydown', moveCarouselOnKeyPress);
