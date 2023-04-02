@@ -58,6 +58,8 @@ The practice of review, plan, note-taking worked really well. Still some details
 - ChatGPT: really made a big difference in pointing me in the right direction, even if the code examples weren't quite right
 - [Conor Bailey: Vanilla JavaScript Infinite Scrolling Image Slider](https://youtu.be/4UXJb4rjeDg) - Not exactly what I wanted but I need to enable scrolling with the keyboard or scroll wheel so I will be revisiting prior to submitting the solution
 
+*Last update note:* ChatGPT blew me away when I asked for an example for the scroll wheel and keyboard keys. I was able to use the code almost as-is, adjusting for the specific names, etc., of course.
+
 ## Author
 
 - Website - [JeffLangTech](https://jefflangtech.github.io/)
