@@ -105,7 +105,7 @@ nav {
   align-items: center;
   margin-bottom: 4.13rem;
 }
-#logo {
+.logo {
   width: 4rem;
 }
 .hero {
@@ -380,7 +380,7 @@ main {
     padding-top: 1.63rem;
     margin-bottom: 2rem;
   }
-  #logo {
+  .logo {
     width: 3rem;
   }
   .hero {
