@@ -6,16 +6,20 @@ const rightBtn = document.getElementById('right-carousel-button');
 const root = document.documentElement;
 const rootStyle = getComputedStyle(root);
 const transitionTiming = rootStyle.getPropertyValue('--transition-delay').slice(0, -1);
+// Control variables for the event listener callback functions
+const left = -1;
+const right = 1;
+let isMoving = false;
 
-// Load the carousel items into an arry
+// Load the carousel items into an array
 const items = [];
 for(let i = 0; i < carouselItems.length; i++) {
   items.push(carouselItems[i]);
 }
-// Capture the width of a carousel item for the shift
+// Capture the width of a carousel item for the slide
 let imgWidth = items[0].clientWidth;
 
-// After the slide, this function processes an instant shift back
+// After the slide, this function processes an instant snap back
 // and a re-organization of the grid items so as to be in the place
 // of the items after the slide
 const gridItemShift = function() {
@@ -28,41 +32,41 @@ const gridItemShift = function() {
     items.forEach((item, index) => {
       item.style.gridColumn = `${index + 1}`;
     });
-    leftBtn.addEventListener('click', carouselShiftLeft);
-    rightBtn.addEventListener('click', carouselShiftRight);
+    isMoving = false;
   }, (parseFloat(transitionTiming) * 1000));
-  items.forEach(item => {
+    items.forEach(item => {
     item.style.setProperty('transition-duration', `${transitionTiming}s`);
   });
 }
 
-// Slides the carousel left and changes item array order to match
-const carouselShiftLeft = function() {
-  leftBtn.removeEventListener('click', carouselShiftLeft);
-  rightBtn.removeEventListener('click', carouselShiftRight);
+const carouselShift = function(direction) {
+  // Flag to ignore additional clicks while carousel is moving
+  if(isMoving) {
+    return;
+  }
+  isMoving = true;
 
   items.forEach(item => {
-    item.style.transform = `translateX(-${imgWidth}px)`;
+    item.style.transform = `translateX(${direction * imgWidth}px)`;
   });
-  let firstItem = items.shift();
-  items.push(firstItem);
+
+  // Re-order array depending on direction of slide, so grid arrangement
+  // can be matched
+  if(direction > 0) {
+    let lastItem = items.pop();
+    items.unshift(lastItem);
+  } else {
+    let firstItem = items.shift();
+    items.push(firstItem);
+  }
 
   gridItemShift();
+
 }
 
-// Slides the carousel right and changes item array order to match
-const carouselShiftRight = function() {
-  leftBtn.removeEventListener('click', carouselShiftLeft);
-  rightBtn.removeEventListener('click', carouselShiftRight);
-
-  items.forEach(item => {
-    item.style.transform = `translateX(${imgWidth}px)`;
-  });
-  let lastItem = items.pop();
-  items.unshift(lastItem);
-
-  gridItemShift();
-}
-
-leftBtn.addEventListener('click', carouselShiftLeft);
-rightBtn.addEventListener('click', carouselShiftRight);
+leftBtn.addEventListener('click', () =>{
+  carouselShift(left);
+});
+rightBtn.addEventListener('click', () =>{
+  carouselShift(right);
+});
