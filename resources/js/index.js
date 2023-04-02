@@ -16,8 +16,6 @@ const items = [];
 for(let i = 0; i < carouselItems.length; i++) {
   items.push(carouselItems[i]);
 }
-// Capture the width of a carousel item for the slide
-let imgWidth = items[0].clientWidth;
 
 // After the slide, this function processes an instant snap back
 // and a re-organization of the grid items so as to be in the place
@@ -45,6 +43,9 @@ const carouselShift = function(direction) {
     return;
   }
   isMoving = true;
+
+  // Capture the width of a carousel item for the slide
+  let imgWidth = items[0].clientWidth;
 
   items.forEach(item => {
     item.style.transform = `translateX(${direction * imgWidth}px)`;

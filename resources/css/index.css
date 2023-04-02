@@ -196,7 +196,7 @@ main {
 .carousel {
   /* Extremely large width to ensure no squeezing of carousel */
   width: 250rem;
-  height: 22.5rem;
+  height: 360px;
   overflow: hidden;
   position: relative;
   left: 50%;
@@ -321,6 +321,13 @@ main {
   .about button {
     margin-inline: auto;
   }
+  .carousel {
+    height: 270px;
+    margin-bottom: 2rem;
+  }
+  .carousel-inner {
+    grid-template-columns: repeat(5, fit-content(405px));
+  }
   .footer-flex {
     padding-inline: 8.66vw;
   }
@@ -368,6 +375,14 @@ main {
   .footer-flex {
     padding-block: 3rem;
     padding-inline: 8.1vw;
+  }
+}
+@media (max-width: 500px) {
+  .carousel {
+    height: 180px;
+  }
+  .carousel-inner {
+    grid-template-columns: repeat(5, fit-content(270px));
   }
 }
 @media (max-width: 375px) {
