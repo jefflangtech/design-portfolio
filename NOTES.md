@@ -9,8 +9,8 @@ A useful practice I've found is to be deliberate and methodical when it comes to
   - [Design System](#design-system)
 - [Building](#building)
   - [HTML](#html)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
+  - [CSS](#css)
+  - [JS](#js)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
@@ -126,11 +126,35 @@ Update: I would call it a success! I'm now feeling disappointed I haven't tried 
 
 I thought about feeding the colors in via JS, stored in an array, but realized that would probably make things *less* clear so I opted for the more verbose selecting of each child.
 
-### Continued development
+### JS
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+I have never done a carousel before, and this one had it's own unique challenges, including:
+- a centered element
+- other elements shown partially on/off the sides of the viewport
+- infinite slide (I added this for my own enjoyment)
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I didn't like very much the flexbox examples I saw, because I wanted control over the children, but grid had it's own downsides. What I settled on was:
+- grid with one row, 5 equal columns, image elements in each grid cell
+- translateX with transition timing for the slide
+- transition duration stored in a custom variable for easy access and update
+- on slide conclusion, all cells are simultaneously snapped back but re-arranged in the grid to match the results of the slide--essentially it just looks like the forward grid item pops to the other side after the slide
+
+Some essentials of the JS
+```js
+// items is an array of the grid children
+items.forEach(item => {
+    item.style.transform = `translateX(-${imgWidth}px)`;
+  });
+  let firstItem = items.shift();
+  items.push(firstItem);
+
+  // This part happens in a timeout after delay to allow the slide
+  items.forEach((item, index) => {
+      item.style.gridColumn = `${index + 1}`;
+    });
+```
+
+I would like to build something more dynamic to adapt to any number of items in the grid but I don't know yet whether I'll do that for this project.
 
 ### Useful resources
 
